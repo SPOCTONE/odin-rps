@@ -1,15 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html onclick="game()">
   <head>
     <meta charset="UTF-8">
     <title>Rock Paper Scissors</title>
   </head>
 <body>
-
-  <div class="wrapper">
-    <button class="mainButton" onclick="game()">🪨🧻✂️</button>
-  </div>
-
+  <h1 class="headline">Click anywhere to start the game!!</h1>
   <style>
     body {
       background-image: url(https://i.pinimg.com/originals/0c/0b/7d/0c0b7d3c36ba86287e4f1966250d73a6.gif);
@@ -17,22 +13,11 @@
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-position: center;
-      height:100%;
-      width:100%;  
     }
-    .wrapper {
+    .headline {
+      margin-top:137px;
       text-align: center;
-      margin-top: 40px;
     }
-    .mainButton {
-      font-size: 20px;
-      border-radius: 12px;
-      border: 4px solid #E0929F;
-      background-color: #F4EAC7;
-    }
-    .mainButton:hover {
-      box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-    } 
   </style>
 
   <script>
