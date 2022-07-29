@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+  </head>
+<body>
+
+  <div class="wrapper">
+    <button class="mainButton" onclick="game()">🪨🧻✂️</button>
+  </div>
+
+  <style>
+    body {
+      background-image: url(https://i.pinimg.com/originals/0c/0b/7d/0c0b7d3c36ba86287e4f1966250d73a6.gif);
+      background-color: #F4F2F6;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      height:100%;
+      width:100%;  
+    }
+    .wrapper {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .mainButton {
+      font-size: 20px;
+      border-radius: 12px;
+      border: 4px solid #E0929F;
+      background-color: #F4EAC7;
+    }
+    .mainButton:hover {
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    } 
+  </style>
+
+  <script>
+    let p = 0, c = 0;
+
+    function getComputerChoice() {
+    let x =  Math.floor(Math.random() * 3);
+    if (x==0) return "rock";
+    else if (x==1) return "paper";
+    else if (x==2) return "scissors";
+    }
+
+    function playRound(ps, cs) {
+      if(ps=="rock" && cs=="scissors") { p++;
+        window.alert("You Win this round!! Rock beats Scissors");
+      }
+      if(ps=="paper" && cs=="rock") { p++;
+        window.alert("You Win this round!! Paper beats Rock");
+      }
+      if(ps=="scissors" && cs=="paper") { p++;
+        window.alert("You Win this round!! Scissors beats Paper");
+      }
+      if(ps=="scissors" && cs=="rock") { c++;
+        window.alert("You Lose this round :( Scissors lost to Rock");
+      }
+      if(ps=="rock" && cs=="paper") { c++;
+        window.alert("You Lose this round :( Rock lost to Paper");
+      }
+      if(ps=="paper" && cs=="scissors") { c++;
+        window.alert("You Lose this round :( Paper lost to Scissors");
+      }
+    }
+
+    function game() {
+      const rounds = window.prompt("how many rounds do you want to play?");
+      for (let i = 0; i < rounds; i++) {
+        let playerSelection = getComputerChoice().toLowerCase();;
+        let computerSelection = window.prompt("What move do you choose?").toLowerCase();
+        playRound(playerSelection, computerSelection);
+      }
+      console.log()
+      if (p>c) window.alert(`The score is ${p} - ${c}\nYou Won the tournament!!`);
+      else if (p==c) window.alert(`The score is ${p} - ${c}\nYou lost the tournament :(`);
+      else window.alert(`The score is ${p} - ${c}\nIt's a tie -_-`);
+    }
+
+  </script>
+
+</body>
+</html>
